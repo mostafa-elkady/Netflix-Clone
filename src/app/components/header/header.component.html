@@ -1,0 +1,27 @@
+<!-- Header -->
+<header class="h-16 z-10 bg-[#272633] sticky top-0">
+  <div class="container mx-auto">
+    <div class="flex justify-between items-center">
+      <img width="110" src="./assets/netflix-logo.png" alt="netflix-logo" />
+      <div class="flex gap-6">
+        <ul class=" items-center gap-4  hidden lg:flex ">
+          <li *ngFor="let item of navList" class="text-neutral-200 cursor-pointer font-semibold hover:text-neutral-100">
+            {{ item }}
+          </li>
+        </ul>
+        <!-- User Profile -->
+        <div class="flex items-center">
+          <p class="text-white pe-1">
+            <span class="font-bold">Welcome</span> {{ userName }}
+          </p>
+          <img [src]="usserImg" alt="usserImg" width="40" class="rounded-full" />
+          &nbsp; | &nbsp;
+          <button class="text-white  p-1 rounded bg-red-600 hover:bg-red-700 transition-[1s]"
+            (click)="signOut()">
+            Sign Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

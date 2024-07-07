@@ -1,5 +1,5 @@
 declare var google: any;
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,8 +9,9 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent implements OnInit {
-  private router = inject(Router)
+export class LoginComponent implements OnInit {  
+  
+  constructor( private _Router: Router) { }
   ngOnInit(): void {
     google.accounts.id.initialize({
 
@@ -38,6 +39,6 @@ export class LoginComponent implements OnInit {
     // Store in seesion Storage
     sessionStorage.setItem("userToken", JSON.stringify(payload))
     //Navigate to Home Page
-    this.router.navigate(['/home'])
+    this._Router.navigate(['/home'])
   }
 }

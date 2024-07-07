@@ -1,0 +1,18 @@
+<!-- Header Component -->
+<app-header [usserImg]="userProfileImg" [userName]="name" />
+<!--Banner component -->
+<app-banner [bannerTitle]="(bannerDetail$ | async)?.original_title"
+  [bannerOverview]="(bannerDetail$ | async)?.overview" [key]="(bannerVideo$ | async)?.results[0].key"/>
+<!-- Movie Carousel Component -->
+<app-movie-carousel [videoContent]="movies" [title]="'Popular On Netflix'" />
+<app-movie-carousel [videoContent]="tvShows" [title]="'Tv Shows'" />
+<app-movie-carousel [videoContent]="trendingTv ? trendingTv : []" [title]="'Trending Tv Shows'" />
+<app-movie-carousel [videoContent]="ratedMovies ? ratedMovies : []" [title]="'Rated Movies'" />
+<app-movie-carousel [videoContent]="nowPlayingMovies ? nowPlayingMovies : []" [title]="'Now Playing  Movies'" />
+<app-movie-carousel [videoContent]="upcomingMovies ? upcomingMovies : []" [title]="'Upcoming Movies'" />
+<app-movie-carousel [videoContent]="popularMovies ? popularMovies : []" [title]="'Popular Movies'" />
+<div class="container mx-auto">
+
+
+
+</div>
